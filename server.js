@@ -1,45 +1,81 @@
-var fs = require('fs');
-var net = require('net');
-var server = require('http').createServer(function(req, response){
-  fs.readFile(__dirname+'/client.html', function(err, data){
-    response.writeHead(200, {'Content-Type':'text/html'}); 
-    response.write(data);  
-    response.end();
-  });
-});
+// Required modules
+var fs = require('fs'),
+	net = require('net'),
+	http = require('http'),
+	paperboy = require('paperboy'),
+	path = require('path'),
+	nowjs = require("now");
 
-var nowjs = require("now");
-var everyone = nowjs.initialize(server);
+//Global variables
+var	
+	PORT = 8080,
+	WEBROOT = path.join(path.dirname(__filename), 'app'),
 
-var gatewayIP = "192.168.0.230";
-var gatewayPort = 4998;
+	// IP info for GC-100
+	gatewayIP = "192.168.0.230",
+	gatewayPort = 4998,
+	
+	// These values are defined by the GC-100 API
+	connectorAddr = "2",
+	ID = 1,
+	IRcommand = null,
+	IRcount = 1,
+	IRfrequency = 38000,
+	IRoffset = 1,
+	IRrepeat = 1;
 
-// These values are defined by the GC-100 API
-var connectorAddr = "2";
-var ID = 1;
-var IRcommand = null;
-var IRcount = 1;
-var IRfrequency = 38000;
-var IRoffset = 1;
-var IRrepeat = 1;
+// start http server
+var server = http.createServer(function(req, res) {
+  var ip = req.connection.remoteAddress;
+  paperboy
+    .deliver(WEBROOT, req, res)
+    .addHeader('Expires', 300)
+    .addHeader('X-PaperRoute', 'Node')
+    .before(function() {
+      console.log('Received Request');
+    })
+    .after(function(statCode) {
+      log(statCode, req.url, ip);
+    })
+    .error(function(statCode, msg) {
+      res.writeHead(statCode, {'Content-Type': 'text/plain'});
+      res.end("Error " + statCode);
+      log(statCode, req.url, ip, msg);
+    })
+    .otherwise(function(err) {
+      res.writeHead(404, {'Content-Type': 'text/plain'});
+      res.end("Error 404: File not found");
+      log(404, req.url, ip, err);
+    });
+}).listen(PORT);
+
+function log(statCode, url, ip, err) {
+  var logStr = statCode + ' - ' + url + ' - ' + ip;
+  if (err)
+    logStr += ' - ' + err;
+  console.log(logStr);
+}
+
+// Initialize now.js
+var	everyone = nowjs.initialize(server);
 
 // This function transmits the IR command to the GC-100
 var sendIR = function(data) {
 	var client = new net.Socket();
 	client.connect(gatewayPort, gatewayIP, function() {
 
-    console.log('CONNECTED TO: ' + gatewayIP + ':' + gatewayPort);
+    //console.log('CONNECTED TO: ' + gatewayIP + ':' + gatewayPort);
     // Write a message to the socket as soon as the client is connected, the server will receive it as message from the client 
     var sendData = "sendir,"+connectorAddr+":"+ID+","+IRrepeat+","+IRfrequency+","+IRcount+","+IRoffset+","+data+"\r";
 	client.write(sendData);
-	console.log(sendData + " was sent to " + gatewayIP + ':' + gatewayPort);
+	//console.log(sendData + " was sent to " + gatewayIP + ':' + gatewayPort);
 	});
 
 	// Add a 'data' event handler for the client socket
 	// data is what the server sent to this socket
 	client.on('data', function(data) {
     
-    console.log('DATA: ' + data);
+    //console.log('DATA: ' + data);
     // Close the client socket completely
     client.destroy();
     
@@ -47,7 +83,7 @@ var sendIR = function(data) {
 
 	// Add a 'close' event handler for the client socket
 	client.on('close', function() {
-    	console.log('Connection closed');
+    	//console.log('Connection closed');
 	});
 }
 
@@ -109,5 +145,3 @@ everyone.now.buttonPress = function(button){
    //Determine which button was pressed
    whichCommand(button);
 }
-
-server.listen(8080);
