@@ -1,13 +1,12 @@
 var fs = require('fs');
 var net = require('net');
 var server = require('http').createServer(function(req, response){
-  fs.readFile(__dirname+'app/client.html', function(err, data){
+  fs.readFile(__dirname+'/client.html', function(err, data){
     response.writeHead(200, {'Content-Type':'text/html'}); 
     response.write(data);  
     response.end();
   });
 });
-server.listen(8080);
 
 var nowjs = require("now");
 var everyone = nowjs.initialize(server);
@@ -111,3 +110,4 @@ everyone.now.buttonPress = function(button){
    whichCommand(button);
 }
 
+server.listen(8080);
