@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Benq remote demo</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="/nowjs/now.js"></script>
+
+<script>
+$(document).ready(function(){
+  $(".mp522st").click(function(){
+    now.buttonPress($(this).attr('id'));
+  });
+});
+</script>
+</head>
+
+<body>
+<input class ="mp522st" type="button" value="Power" id="power">
+<input class ="mp522st" type="button" value="Play/Pause" id="play-pause">
+<input class ="mp522st" type="button" value="Menu" id="menu">
+<input class ="mp522st" type="button" value="Up" id="up-arrow">
+
+<input class ="mp522st" type="button" value="Auto" id="auto">
+<input class ="mp522st" type="button" value="Left" id="left-arrow">
+<input class ="mp522st" type="button" value="Mode" id="mode">
+<input class ="mp522st" type="button" value="Right" id="right-arrow">
+
+<input class ="mp522st" type="button" value="Blank" id="blank">
+<input class ="mp522st" type="button" value="Down" id="down-arrow">
+<input class ="mp522st" type="button" value="Source" id="source">
+<input class ="mp522st" type="button" value="+" id="zoom+">
+
+<input class ="mp522st" type="button" value="-" id="zoom-">
+<input class ="mp522st" type="button" value="Timer On" id="timer-on">
+<input class ="mp522st" type="button" value="Timer Set up" id="timer-setup">
+
+</body>
+</html>
