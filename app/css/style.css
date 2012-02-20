@@ -171,7 +171,7 @@ table button, table input { *overflow: auto; }
  * 2. Allow styling of clickable form elements in iOS
  */
 
-button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: none; }
 
 /*
  * Consistent box sizing and appearance
@@ -212,7 +212,7 @@ td { vertical-align: top; }
    ========================================================================== */
 
 body {
-	background-color:#333;
+	background-color: #CCC;
 }
 
 #main {
@@ -223,10 +223,74 @@ body {
 }
 
 .pushbutton {
-	margin: 10px;
-	height: 30px;
-	width: 75px;
+	background: url(/img/buttons.png) no-repeat 0 0;
+	cursor:pointer;
+	width: 88px;
+	height: 35px;
+	display: block;
+	text-indent: -9999px;
 }
+
+#power 			{background-position: 0px 0px;}
+#power:hover 	{background-position: 0px -41px;}
+#power:active 	{background-position: 0px -82px;}
+
+#play-pause			{background-position: -88px 0px;}
+#play-pause:hover 	{background-position: -88px -41px;}
+#play-pause:active	{background-position: -88px -82px;}
+
+#menu 			{background-position: -176px 0px;}
+#menu:hover 	{background-position: -176px -41px;}
+#menu:active 	{background-position: -176px -83px;}
+
+#up-arrow			{background-position: -264px 0px;}
+#up-arrow:hover		{background-position: -264px -41px;}
+#up-arrow:active 	{background-position: -264px -82px;}
+
+#auto			{background-position: -352px 0px;}
+#auto:hover		{background-position: -352px -41px;}
+#auto:active 	{background-position: -352px -82px;}
+
+#left-arrow			{background-position: -440px 0px;}
+#left-arrow:hover	{background-position: -440px -41px;}
+#left-arrow:active 	{background-position: -440px -82px;}
+
+#mode			{background-position: -528px 0px;}
+#mode:hover		{background-position: -528px -41px;}
+#mode:active 	{background-position: -528px -82px;}
+
+#right-arrow		{background-position: -616px 0px;}
+#right-arrow:hover	{background-position: -616px -41px;}
+#right-arrow:active {background-position: -616px -82px;}
+
+#blank			{background-position: -704px 0px;}
+#blank:hover	{background-position: -704px -41px;}
+#blank:active 	{background-position: -704px -82px;}
+
+#down-arrow			{background-position: -792px 0px;}
+#down-arrow:hover	{background-position: -792px -41px;}
+#down-arrow:active 	{background-position: -792px -82px;}
+
+#source			{background-position: -880px 0px;}
+#source:hover	{background-position: -880px -41px;}
+#source:active 	{background-position: -880px -82px;}
+
+#zoom-in		{background-position: -968px 0px;}
+#zoom-in:hover	{background-position: -968px -41px;}
+#zoom-in:active	{background-position: -968px -82px;}
+
+#zoom-out		{background-position: -1056px 0px;}
+#zoom-out:hover	{background-position: -1056px -41px;}
+#zoom-out:active{background-position: -1056px -82px;}
+
+#timer-on			{background-position: -1144px 0px;}
+#timer-on:hover		{background-position: -1144px -41px;}
+#timer-on:active 	{background-position: -1144px -82px;}
+
+#timer-setup		{background-position: -1232px 0px;}
+#timer-setup:hover	{background-position: -1232px -41px;}
+#timer-setup:active {background-position: -1232px -82px;}
+
 
 .col1, .col2, .col3, .col4, .row1, .row2, .row3, .row4, .row5, .row6, .row7 {
 		position:absolute;	

@@ -17,7 +17,10 @@
   <meta name="author" content="">
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  
+  <!-- Hide browser chrome -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
@@ -42,50 +45,50 @@
     </header>
     <div id="main" role="main">
     <div id="main-wrapper">
-    	<div class="col1 row1">        	
-			<input type="button" class="mp522st pushbutton" value="Power" id="power"/>
+    	<div class="col1 row1">        				
+            <div class="mp522st pushbutton" id="power"></div>
         </div>
-        <div class="col1 row2">
-	        <input type="button" class="mp522st pushbutton" value="Play" id="play-pause"/>
+        <div class="col1 row2">	        
+            <div class="mp522st pushbutton" id="play-pause"></div>
         </div>
         <div class="col2 row2">
-	        <input type="button" class="mp522st pushbutton" value="Menu" id="menu"/>
+        	<div class="mp522st pushbutton" id="menu"></div>	        
         </div>
-        <div class="col3 row2">
-	        <input type="button" class="mp522st pushbutton" value="&uarr;" id=""/>
+        <div class="col3 row2">	        
+            <div class="mp522st pushbutton" id="up-arrow"></div>
         </div>
         <div class="col4 row2">
-	        <input type="button" class="mp522st pushbutton" value="Auto" id="auto"/>
+        	<div class="mp522st pushbutton" id="auto"></div>
         </div>
         <div class="col2 row3">
-	        <input type="button" class="mp522st pushbutton" value="&larr;" id=""/>
+        	<div class="mp522st pushbutton" id="left-arrow"></div>	        
         </div>
         <div class="col3 row3">
-	        <input type="button" class="mp522st pushbutton" value="Mode" id="mode"/>
+        	<div class="mp522st pushbutton" id="mode"></div>	        
         </div>
         <div class="col4 row3">
-	        <input type="button" class="mp522st pushbutton" value="&rarr;" id=""/>
+            <div class="mp522st pushbutton" id="right-arrow"></div>
         </div>
         <div class="col2 row4">
-	        <input type="button" class="mp522st pushbutton" value="Blank" id="blank"/>
+            <div class="mp522st pushbutton" id="blank"></div>
         </div>
         <div class="col3 row4">
-	        <input type="button" class="mp522st pushbutton" value="&darr;" id=""/>
+            <div class="mp522st pushbutton" id="down-arrow"></div>
         </div>
         <div class="col4 row4">
-	        <input type="button" class="mp522st pushbutton" value="Source" id="source"/>
+            <div class="mp522st pushbutton" id="source"></div>
         </div>
         <div class="col2 row6">
-	        <input type="button" class="mp522st pushbutton" value="+" id="zoom+"/>
+            <div class="mp522st pushbutton" id="zoom-in"></div>
         </div>
         <div class="col2 row7">
-	        <input type="button" class="mp522st pushbutton" value="-" id="zoom-"/>
+            <div class="mp522st pushbutton" id="zoom-out"></div>
         </div>
         <div class="col4 row6">
-	        <input type="button" class="mp522st pushbutton" value="On" id="timer-on"/>
+            <div class="mp522st pushbutton" id="timer-on"></div>
         </div>
         <div class="col4 row7">
-	        <input type="button" class="mp522st pushbutton" value="Setup" id="timer-setup"/>        
+            <div class="mp522st pushbutton" id="timer-setup"></div>
     	</div>
     </div><!-- end of main-wrapper -->
     </div>
@@ -94,36 +97,17 @@
     </footer>
   </div> <!--! end of #container -->
 
-
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
-
   <!-- scripts concatenated and minified via ant build script-->
   <script defer src="js/plugins.js"></script>
   <script defer src="js/script.js"></script>
   <script src="/nowjs/now.js"></script>
   <!-- end scripts-->
-
-	
-  <!-- Change UA-XXXXX-X to be your site's ID -->
-  <script>
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
-  </script>
-
-
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-  
+ 
 </body>
 </html>
