@@ -26,6 +26,7 @@
 
   <!-- CSS: implied media=all -->
   <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
   <link rel="stylesheet" href="css/style.css">
   <!-- end CSS-->
 
@@ -38,70 +39,34 @@
 </head>
 
 <body>
-
-  <div id="container">
-    <header>
-
-    </header>
-    <div id="main" role="main">
-    <div id="main-wrapper">
-    	<div class="col1 row1">        				
-            <div class="mp522st pushbutton" id="power"></div>
-        </div>
-        <div class="col1 row2">	        
-            <div class="mp522st pushbutton" id="play-pause"></div>
-        </div>
-        <div class="col2 row2">
-        	<div class="mp522st pushbutton" id="menu"></div>	        
-        </div>
-        <div class="col3 row2">	        
-            <div class="mp522st pushbutton" id="up-arrow"></div>
-        </div>
-        <div class="col4 row2">
-        	<div class="mp522st pushbutton" id="auto"></div>
-        </div>
-        <div class="col2 row3">
-        	<div class="mp522st pushbutton" id="left-arrow"></div>	        
-        </div>
-        <div class="col3 row3">
+    <div data-role="page">
+        <div id="main-wrapper">
+        	<div class="mp522st pushbutton" id="power"></div>    
+	        <div class="mp522st pushbutton" id="play-pause"></div>
+    	    <div class="mp522st pushbutton" id="menu"></div>	              
+        	<div class="mp522st narrow" id="up-arrow"></div>
+	        <div class="mp522st pushbutton" id="auto"></div>
+    	    <div class="mp522st narrow" id="left-arrow"></div>	        
         	<div class="mp522st pushbutton" id="mode"></div>	        
-        </div>
-        <div class="col4 row3">
-            <div class="mp522st pushbutton" id="right-arrow"></div>
-        </div>
-        <div class="col2 row4">
-            <div class="mp522st pushbutton" id="blank"></div>
-        </div>
-        <div class="col3 row4">
-            <div class="mp522st pushbutton" id="down-arrow"></div>
-        </div>
-        <div class="col4 row4">
-            <div class="mp522st pushbutton" id="source"></div>
-        </div>
-        <div class="col2 row6">
-            <div class="mp522st pushbutton" id="zoom-in"></div>
-        </div>
-        <div class="col2 row7">
-            <div class="mp522st pushbutton" id="zoom-out"></div>
-        </div>
-        <div class="col4 row6">
-            <div class="mp522st pushbutton" id="timer-on"></div>
-        </div>
-        <div class="col4 row7">
-            <div class="mp522st pushbutton" id="timer-setup"></div>
-    	</div>
-    </div><!-- end of main-wrapper -->
+	        <div class="mp522st narrow" id="right-arrow"></div>
+    	    <div class="mp522st pushbutton" id="blank"></div>
+        	<div class="mp522st narrow" id="down-arrow"></div>
+	        <div class="mp522st pushbutton" id="source"></div>
+    	    <div class="mp522st narrow" id="zoom-in"></div>
+            <label class="btn-label" id="zoom">Digital Zoom</label>
+        	<div class="mp522st narrow" id="zoom-out"></div>
+            <label class="btn-label" id="timer">Timer</label>
+	        <div class="mp522st pushbutton" id="timer-on"></div>
+    	    <div class="mp522st pushbutton" id="timer-setup"></div>  
+		</div>
     </div>
-    <footer>
-    	<img src="img/benq-logo.png"/>		
-    </footer>
-  </div> <!--! end of #container -->
 
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.6.2.min.js"><\/script>')</script>
+  <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 
   <!-- scripts concatenated and minified via ant build script-->
   <script defer src="js/plugins.js"></script>
