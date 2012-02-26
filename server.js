@@ -140,8 +140,9 @@ var whichCommand = function(command) {
 	sendIR(IRcommand);
 }
 
-everyone.now.buttonPress = function(button){
-   console.log(button + " button pressed");
+// This function receives event data from the client
+everyone.now.buttonPress = function(device,button){
+   console.log(button + " button pressed on device " + device);
    //Determine which button was pressed
    whichCommand(button);
 }
