@@ -17,7 +17,7 @@
   <meta name="author" content="">
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
   
   <!-- Hide browser chrome -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -39,25 +39,47 @@
 </head>
 
 <body>
-    <div data-role="page">
+    <div data-role="page" id="BenQ-MP522ST" data-theme="a">
+    	<div data-role="header" data-theme="c">
+        	<h2>CNTRLLR demo</h2>
+            <div data-role="navbar" data-theme="c">
+				<ul>
+					<li><a href="#BenQ-MP522ST" class="ui-btn-active">Projector</a></li>
+					<li><a href="#other">Other</a></li>
+				</ul>
+			</div><!-- /navbar -->
+        </div>
         <div id="main-wrapper">
-        	<div class="mp522st pushbutton" id="power"></div>    
-	        <div class="mp522st pushbutton" id="play-pause"></div>
-    	    <div class="mp522st pushbutton" id="menu"></div>	              
-        	<div class="mp522st narrow" id="up-arrow"></div>
-	        <div class="mp522st pushbutton" id="auto"></div>
-    	    <div class="mp522st narrow" id="left-arrow"></div>	        
-        	<div class="mp522st pushbutton" id="mode"></div>	        
-	        <div class="mp522st narrow" id="right-arrow"></div>
-    	    <div class="mp522st pushbutton" id="blank"></div>
-        	<div class="mp522st narrow" id="down-arrow"></div>
-	        <div class="mp522st pushbutton" id="source"></div>
-    	    <div class="mp522st narrow" id="zoom-in"></div>
-            <label class="btn-label" id="zoom">Digital Zoom</label>
-        	<div class="mp522st narrow" id="zoom-out"></div>
-            <label class="btn-label" id="timer">Timer</label>
-	        <div class="mp522st pushbutton" id="timer-on"></div>
-    	    <div class="mp522st pushbutton" id="timer-setup"></div>  
+        	<a href="#" class="mp522st col1 row1 cssbutton ui-icon-power" id="power">Power</a>    
+            <a href="#" class="mp522st col1 row2 cssbutton" id="source">Source</a>
+	        <a href="#" class="mp522st col2 row1 cssbutton" id="menu">Menu</a>	
+            <a href="#" class="mp522st col1 row3 cssbutton" id="play-pause">Play/Pause</a>
+    	    <a href="#" class="mp522st col1 row4 cssbutton" id="auto">Auto</a>              
+        	<a href="#" class="mp522st col3 row1 cssbutton" id="up-arrow">&uarr;</a>	        
+    	    <a href="#" class="mp522st col2 row2 cssbutton" id="left-arrow">&larr;</a>	        
+        	<a href="#" class="mp522st col3 row2 cssbutton" id="mode">Mode</a>	        
+	        <a href="#" class="mp522st col4 row2 cssbutton" id="right-arrow">&rarr;</a>
+    	    <a href="#" class="mp522st col1 row5 cssbutton" id="blank">Blank</a>
+        	<a href="#" class="mp522st col3 row3 cssbutton" id="down-arrow">&darr;</a>	        
+            <a href="#" class="mp522st col2 row5 cssbutton" id="zoom-in">Zoom +</a>   	        
+       		<a href="#" class="mp522st col2 row6 cssbutton" id="zoom-out">Zoom -</a>
+	        <a href="#" class="mp522st col4 row5 cssbutton" id="timer-on">Timer On</a>
+    	    <a href="#" class="mp522st col4 row6 cssbutton" id="timer-setup">Setup</a>  
+		</div>
+    </div>
+    
+    <div data-role="page" id="other" data-theme="a">
+    	<div data-role="header" data-theme="c">
+        	<h2>CNTRLLR</h2>
+            <div data-role="navbar" data-theme="c">
+				<ul>
+					<li><a href="#BenQ-MP522ST">Projector</a></li>
+					<li><a href="#" class="ui-btn-active">Other</a></li>
+				</ul>
+			</div><!-- /navbar -->
+        </div>
+        <div id="main-wrapper">
+        	<p>This is another page.</p>
 		</div>
     </div>
 
